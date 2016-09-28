@@ -3,17 +3,15 @@
     <nav>
       <ul class="nav navbar-nav">
          <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li> 
               <li><%= link_to "店舗ページ", current_user %></li>
               <li><%= link_to "ページ編集", edit_user_path(current_user) %></li>　<!--これでユーザーのIDを指定しつつエディットに飛ぶ-->
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
+                <%= link_to "ログアウト", logout_path, method: "delete" %>
               </li>
             </ul>
           </li>
         <% else %>
-           <li><%= link_to "店舗ページ", current_user %></li>
           <li><%= link_to "ログイン", login_path %></li>
           <li><%= link_to "店舗登録", signup_path %></li>
         <% end %>
