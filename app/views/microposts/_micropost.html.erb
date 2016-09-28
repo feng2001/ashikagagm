@@ -1,0 +1,12 @@
+<li id="micropost-<%= micropost.id %>"><!--id取得-->
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %><!--アイコンを引っ張ってくる-->
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span><!--名前を表示-->
+  <span class="content"><%= micropost.content %></span><!--多分ツイートを取得して表示-->
+  <span class="timestamp"><!--タイムスタンプ？-->
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.<!--どれくらい前のツイートか表示-->
+        <% if current_user == micropost.user %>　<!--ん？　これ判別のやつ？-->
+      <%= link_to "delete", micropost, method: :delete, 
+                                       data: { confirm: "You sure?" } %><!--消去の-->
+    <% end %>
+  </span>
+</li>

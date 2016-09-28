@@ -1,0 +1,14 @@
+<h1>フォロー一覧</h1>
+		<ul class="following-group">
+    <% @followings.each do |user| %><!--eachで繰り返し処理-->
+			<li class="following-group-itemr">
+			    <h4><%= gravatar_for(user, size: 50) %></h4>
+			    <p><%= user.name %></p>
+			    <br>
+			</li>
+    <% end %>
+		</div>
+	</div>
+	<h1><%= link_to "Home", current_user %></h1>
+</div>
+
